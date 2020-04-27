@@ -1,15 +1,113 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <style type="text/css">
+            body{
+                background-color: #000000;
+            }
+            #headd{
+                color: grey;
+            }
+            .content {
+                max-width: 1000px;
+                margin: auto;
+                text-align: center;
+                background-color: #000010; 
+                }
+                .newsArticle{
+
+                }
+                .thing {
+                    padding: 1rem;
+                    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+                    0 5px 15px 0 rgba(0,0,0,0.08);
+                    background-color: #000000;
+                    border-radius: 0.5rem;
+  
+                    border: 0 solid #00ff99;
+                    transition: border 300ms ease-in-out, padding 300ms ease-in-out;
+                }
+                .thing:hover {
+                    padding: 0.5rem;
+                    border: 0.5rem solid #00ff99;
+                    }
+
+                .thing > :first-child {
+                    margin-top: 0;
+                    }
+
+                .thing > :last-child {
+                    margin-bottom: 0;
+                    }
+                .divider {                              /* minor cosmetics */
+            display: table; 
+            font-size: 24px; 
+            text-align: center; 
+            width: 75%;                         /* divider width */
+            margin: 40px auto;                  /* spacing above/below */
+        }
+        .divider span { display: table-cell; position: relative; }
+        .divider span:first-child, .divider span:last-child {
+            width: 50%;
+            top: 13px;                          /* adjust vertical align */
+            -moz-background-size: 100% 2px;     /* line width */
+            background-size: 100% 2px;          /* line width */
+            background-position: 0 0, 0 100%;
+            background-repeat: no-repeat;
+        }
+        .divider span:first-child {             /* color changes in here */
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#000));
+            background-image: -webkit-linear-gradient(180deg, transparent, #000);
+            background-image: -moz-linear-gradient(180deg, transparent, #000);
+            background-image: -o-linear-gradient(180deg, transparent, #000);
+            background-image: linear-gradient(90deg, transparent, #000);
+        }
+        .divider span:nth-child(2) {
+            color: #000; padding: 0px 5px; width: auto; white-space: nowrap;
+        }
+        .divider span:last-child {              /* color changes in here */
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(transparent));
+            background-image: -webkit-linear-gradient(180deg, #000, transparent);
+            background-image: -moz-linear-gradient(180deg, #000, transparent);
+            background-image: -o-linear-gradient(180deg, #000, transparent);
+            background-image: linear-gradient(90deg, #000, transparent);
+        }
+
+        </style>
     </head>
-    <body>
-        <h1>News KLE</h1>
+    <body >
+        <div class="content">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg ">
+  <a class="navbar-brand" href="http://localhost:3000/">NewsPlanet</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:3000/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Life</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+        <img src="https://swaddle-wkwcb6s.stackpathdns.com/wp-content/uploads/2020/01/earth-like-planet-TOI-700d-min.jpeg">
         
         <% for(let i = 0; i < posts.length; i++) { %>
-            <article>
+            <article class="thing">
                 <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                <h1 class="display-4"><%= posts[i].title %></h1>
+                <h2 class="display-4"><%= posts[i].title %></h2>
+                <div class="divider"><span></span><span>NewsPlanet</span><span></span></div>
                 <p class="lead"><%= posts[i].body %></p>
                 </div>
                 </div>
@@ -18,8 +116,16 @@
         <form action="addPost" method="Post">
             <input type="text" name="title" placeholder="Category of News">
             <input type="text" name="body" placeholder="Content"></input>
+            <select name="newstype">
+  <option value="world">world</option>
+  <option value="india">india</option>
+  <option value="health">health</option>
+  <option value="sports">sports</option>
+  <option value="entertainment">entertainment</option>
+</select>
             <input type="submit" value="Add Post" />
         </form>
         <script type="text/javascript" src="C:\Users\AMAN LADWA\Desktop\NewsApp\index.js"></script>
+        </div>
     </body>
 </html>

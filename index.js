@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-var postSchema = new mongoose.Schema({ body: String,title:String });
+var postSchema = new mongoose.Schema({ body: String,title:String,newstype:String });
 var Post = mongoose.model('Post', postSchema);
 // Routes
 app.get("/", (req, res) => {
@@ -17,9 +17,28 @@ app.get("/", (req, res) => {
       res.render('index', { posts: posts})
    });
 });
-
+app.get("/india", (req, res) => {
+   Post.find({}, (err, posts) => {
+      res.render('index', { posts: posts})
+   });
+});
+app.get("/health", (req, res) => {
+   Post.find({}, (err, posts) => {
+      res.render('index', { posts: posts})
+   });
+});
+app.get("/sports", (req, res) => {
+   Post.find({}, (err, posts) => {
+      res.render('index', { posts: posts})
+   });
+});
+app.get("/entertainment", (req, res) => {
+   Post.find({}, (err, posts) => {
+      res.render('index', { posts: posts})
+   });
+});
 app.post('/addpost', (req, res) => {
-    var postData = new Post(req.body,req.title);
+    var postData = new Post(req.body,req.title,req.newstype);
     postData.save().then( result => {
         res.redirect('/');
     }).catch(err => {
