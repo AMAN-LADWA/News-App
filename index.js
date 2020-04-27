@@ -17,24 +17,34 @@ app.get("/", (req, res) => {
       res.render('index', { posts: posts})
    });
 });
+app.get("/world", (req, res) => {
+   Post.find({}, (err, posts) => {
+      res.render('world', { posts: posts})
+   });
+});
 app.get("/india", (req, res) => {
    Post.find({}, (err, posts) => {
-      res.render('index', { posts: posts})
+      res.render('india', { posts: posts})
    });
 });
 app.get("/health", (req, res) => {
    Post.find({}, (err, posts) => {
-      res.render('index', { posts: posts})
+      res.render('health', { posts: posts})
    });
 });
 app.get("/sports", (req, res) => {
    Post.find({}, (err, posts) => {
-      res.render('index', { posts: posts})
+      res.render('sports', { posts: posts})
    });
 });
 app.get("/entertainment", (req, res) => {
    Post.find({}, (err, posts) => {
-      res.render('index', { posts: posts})
+      res.render('entertainment', { posts: posts})
+   });
+});
+app.get("/covid19", (req, res) => {
+   Post.find({}, (err, posts) => {
+      res.render('covid19', { posts: posts})
    });
 });
 app.post('/addpost', (req, res) => {

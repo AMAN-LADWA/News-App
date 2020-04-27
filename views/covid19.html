@@ -4,7 +4,7 @@
 
         <style type="text/css">
             body{
-                background-color: #FFFFFFFF;
+                background-color: #43869fc7;
             }
             #headd{
                 color: grey;
@@ -13,7 +13,7 @@
                 max-width: 1000px;
                 margin: auto;
                 text-align: center;
-                background-color: #FFFFFFFF; 
+                background-color: #43869fc7; 
                 }
                 .newsArticle{
 
@@ -22,7 +22,7 @@
                     padding: 1rem;
                     box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
                     0 5px 15px 0 rgba(0,0,0,0.08);
-                    background-color: #FFFFFFFF;
+                    background-color: #43869fb7;
                     border-radius: 0.5rem;
   
                     border: 0 solid #00ff99;
@@ -85,13 +85,13 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://localhost:3000/">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <a class="nav-link" href="http://localhost:3000/">Home </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link" href="http://localhost:3000/world">World</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link" href="http://localhost:3000/india">India</a>
       </li>
       <li class="nav-item">
@@ -103,15 +103,16 @@
       <li class="nav-item">
         <a class="nav-link" href="http://localhost:3000/entertainment">Entertainment</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost:3000/covid19">Covid19</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:3000/covid19">Covid19<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
 </nav>
-        <img src="https://learnbonds.com/wp-content/images/2019/05/Marketplace-Lending-News.jpg" height="500" width="1000">
+        <img src="https://static01.nyt.com/images/2020/03/10/us/how-coronavirus-infects-a-cell-promo-1583866148761/how-coronavirus-infects-a-cell-promo-1583866148761-videoSixteenByNineJumbo1600-v3.jpg" height="500" width="1000">
         
         <% for(let i = 0; i < posts.length; i++) { %>
+        <% if (posts[i].newstype == "covid19") { %>
             <article class="thing">
                 <div class="jumbotron jumbotron-fluid">
                 <div class="container">
@@ -122,19 +123,8 @@
                 </div>
             </article>
         <% } %>
-        <form action="addPost" method="Post">
-            <input type="text" name="title" placeholder="Heading">
-            <input type="text" name="body" placeholder="Content"></input>
-            <select name="newstype">
-  <option value="world">world</option>
-  <option value="covid19">covid19</option>
-  <option value="india">india</option>
-  <option value="health">health</option>
-  <option value="sports">sports</option>
-  <option value="entertainment">entertainment</option>
-</select>
-            <input type="submit" value="Add Post" />
-        </form>
+        <% } %>
+        
         <script type="text/javascript" src="C:\Users\AMAN LADWA\Desktop\NewsApp\index.js"></script>
         </div>
     </body>
