@@ -3,9 +3,9 @@
 Foobar is a Python library for dealing with word pluralization.
 
 ## Installation
-Download the nodeJS [pip](https://nodejs.org/en/) to your system.
+Download the [nodeJS](https://nodejs.org/en/) to your system.
 
-Also Download MongoDB [pip](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/) for windows.
+Also Download [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/) for windows.
 
 Clone repository locally and cd through cli into the project folder.
 When in directory ,
