@@ -1,6 +1,5 @@
 # News-App
 
-Foobar is a Python library for dealing with word pluralization.
 
 ## Installation
 Download the [nodeJS](https://nodejs.org/en/) to your system.
