@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-var postSchema = new mongoose.Schema({ body: String,title:String,newstype:String });
+var postSchema = new mongoose.Schema({ body: String,title:String,newstype:String,author:String,dt:String });
 var Post = mongoose.model('Post', postSchema);
 // Routes
 app.get("/", (req, res) => {
@@ -48,7 +48,7 @@ app.get("/covid19", (req, res) => {
    });
 });
 app.post('/addpost', (req, res) => {
-    var postData = new Post(req.body,req.title,req.newstype);
+    var postData = new Post(req.body,req.title,req.newstype,req.author,req.dt);
     postData.save().then( result => {
         res.redirect('/');
     }).catch(err => {

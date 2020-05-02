@@ -115,7 +115,9 @@
             <article class="thing">
                 <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                <h2 class="display-4"><%= posts[i].title %></h2>
+                <h2 class="display-4"><%= posts[i].title %></h2><br>
+                <h4 ><%= posts[i].author %></h4><br>
+                <h4 ><%= posts[i].dt %></h4><br>
                 <div class="divider"><span></span><span>NewsPlanet</span><span></span></div>
                 <p class="lead"><%= posts[i].body %></p>
                 </div>
@@ -124,7 +126,9 @@
         <% } %>
         <form action="addPost" method="Post">
             <input type="text" name="title" placeholder="Heading">
-            <input type="text" name="body" placeholder="Content"></input>
+            <input type="text" name="body" placeholder="Content">
+            <input type="text" name="author" placeholder="AuthorName">
+            <input type="text" name="dt" placeholder="dd-mm-yyyy">
             <select name="newstype">
   <option value="world">world</option>
   <option value="covid19">covid19</option>
